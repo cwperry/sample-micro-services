@@ -1,0 +1,26 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    group = 'com.ninjaone.sandbox'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+
+    jar {
+        enabled = false
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
