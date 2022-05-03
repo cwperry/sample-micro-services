@@ -18,7 +18,7 @@ public class FactController {
 
     @GetMapping("/fact")
     @ResponseBody
-    public ResponseEntity<Fact> retrieveWeather() {
+    public ResponseEntity<String> retrieveWeather() {
         return ResponseEntity.ok(factService.retrieveFact());
     }
 }

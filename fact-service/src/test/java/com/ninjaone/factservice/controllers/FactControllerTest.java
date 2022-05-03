@@ -38,12 +38,12 @@ class FactControllerTest {
         List<Fact> facts = objectMapper.readValue(json, new TypeReference<>() {
         });
 
-        when(factService.retrieveFact()).thenReturn(facts.get(0));
+        when(factService.retrieveFact()).thenReturn(facts.get(0).getFact());
 
         mockMvc.perform(
                         get("/fact"))
                 .andExpect(status().isOk())
-                .andExpect(content().json(objectMapper.writeValueAsString(facts.get(0))));
+                .andExpect(content().string(facts.get(0).getFact()));
     }
 
 }

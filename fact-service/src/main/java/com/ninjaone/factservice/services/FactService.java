@@ -26,7 +26,7 @@ public class FactService {
         this.apiKey = apiKey;
     }
 
-    public Fact retrieveFact() {
+    public String retrieveFact() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Api-Key", apiKey);
 
@@ -38,6 +38,6 @@ public class FactService {
                 request,
                 new ParameterizedTypeReference<List<Fact>>() {
                 }).getBody();
-        return Objects.requireNonNull(facts).stream().findFirst().orElse(null);
+        return Objects.requireNonNull(facts).stream().findFirst().map(Fact::getFact).orElse(null);
     }
 }

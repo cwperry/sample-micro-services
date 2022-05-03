@@ -58,7 +58,7 @@ class FactServiceTest {
                 new ParameterizedTypeReference<List<Fact>>(){}))
                 .thenReturn(ResponseEntity.ok(facts));
 
-        assertThat(factService.retrieveFact()).isEqualTo(facts.get(0));
+        assertThat(factService.retrieveFact()).isEqualTo(facts.get(0).getFact());
     }
 
 }
