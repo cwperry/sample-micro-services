@@ -17,13 +17,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestOperations;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
