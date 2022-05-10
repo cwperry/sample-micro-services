@@ -21,12 +21,12 @@ class FactServiceTest {
 
     @BeforeEach
     public void beforeEach() {
-        factService = new FactService(restOperations, "host", 123);
+        factService = new FactService(restOperations);
     }
 
     @Test
     public void retrieveFact() {
-        when(restOperations.getForEntity("http://host:123/fact", String.class))
+        when(restOperations.getForEntity("http://fact-service/fact", String.class))
                 .thenReturn(ResponseEntity.ok("a fact"));
 
         assertThat(factService.retrieveFact()).isEqualTo("a fact");

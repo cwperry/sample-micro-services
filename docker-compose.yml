@@ -1,0 +1,22 @@
+version: '3'
+services:
+  discovery:
+    container_name: discovery-server
+    build:
+      context: discovery
+    image: discovery-server:latest
+    ports:
+      - "8761:8761"
+  fact-service:
+    container_name: fact-server
+    build:
+      context: fact-service
+    image: fact-server:latest
+    environment:
+      DISCOVERY_HOST: discovery
+    restart: on-failure
+    depends_on:
+      - discovery
+  #      - config
+    ports:
+      - "8081:8081"

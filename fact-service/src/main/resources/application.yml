@@ -1,0 +1,16 @@
+weather:
+  api:
+    url: https://api.api-ninjas.com/v1/facts
+    key: 8jRa9jJLclIRRO4eMV7jCA==Qdkn8TTOe9m1eo44
+
+spring:
+  application:
+    name: fact-service
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_HOST}:8761/eureka
