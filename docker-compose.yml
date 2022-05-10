@@ -20,3 +20,16 @@ services:
   #      - config
     ports:
       - "8081:8081"
+  weather-service:
+    container_name: weather-server
+    build:
+      context: weather-service
+    image: weather-server:latest
+    environment:
+      DISCOVERY_HOST: discovery
+    restart: on-failure
+    depends_on:
+      - discovery
+    #      - config
+    ports:
+      - "8082:8082"
