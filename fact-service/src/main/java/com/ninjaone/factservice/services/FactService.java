@@ -19,8 +19,8 @@ public class FactService {
     private final String apiKey;
 
     public FactService(RestOperations restOperations,
-                       @Value("${weather.api.url}") String url,
-                       @Value("${weather.api.key}") String apiKey) {
+                       @Value("${fact.api.url}") String url,
+                       @Value("${fact.api.key}") String apiKey) {
         this.restOperations = restOperations;
         this.url = url;
         this.apiKey = apiKey;

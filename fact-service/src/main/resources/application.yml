@@ -1,4 +1,4 @@
-weather:
+fact:
   api:
     url: https://api.api-ninjas.com/v1/facts
     key: 8jRa9jJLclIRRO4eMV7jCA==Qdkn8TTOe9m1eo44
