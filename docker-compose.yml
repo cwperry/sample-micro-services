@@ -33,3 +33,18 @@ services:
     #      - config
     ports:
       - "8082:8082"
+  information-service:
+    container_name: information-server
+    build:
+      context: information-service
+    image: information-server:latest
+    environment:
+      DISCOVERY_HOST: discovery
+    restart: on-failure
+    depends_on:
+      - discovery
+      - fact-service
+      - weather-service
+    #      - config
+    ports:
+      - "8080:8080"
