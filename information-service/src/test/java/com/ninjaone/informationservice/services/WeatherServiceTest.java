@@ -42,7 +42,7 @@ class WeatherServiceTest {
                 .sunset(10)
                 .build();
 
-        when(restOperations.getForEntity("http://weather-service/weather?zip=75023", WeatherData.class))
+        when(restOperations.getForEntity("http://weather-service/weather/75023", WeatherData.class))
                 .thenReturn(ResponseEntity.ok(weather));
 
         assertThat(weatherService.retrieveWeather("75023")).isEqualTo(weather);

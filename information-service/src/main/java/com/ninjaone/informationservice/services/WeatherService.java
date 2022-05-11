@@ -14,7 +14,7 @@ public class WeatherService {
 
     public WeatherData retrieveWeather(String zipCode) {
         return restOperations.getForEntity(
-                String.format("http://weather-service/weather?zip=%s", zipCode),
+                String.format("http://weather-service/weather/%s", zipCode),
                 WeatherData.class)
                 .getBody();
     }
